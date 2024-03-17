@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --background-url: url(./assets/bg-desktop.jpg);
+  --background-url: url(./assets/bg-mobile.jpg);
   --border-color: rgba(255, 255, 255, 0.5);
   --button-list-color: rgba(255, 255, 255, 0.1);
   --button-list-color-hover: rgba(0, 0, 0, 0.2);
@@ -16,7 +16,7 @@
 
 .light {
   --text-color: black;
-  --background-url: url(./assets/bg-desktop-light.jpg);
+  --background-url: url(./assets/bg-mobile-light.jpg);
   --border-color: rgba(0, 0, 0, 0.5);
   --button-list-color: rgba(0, 0, 0, 0.1);
   --button-list-color-hover: rgba(0, 0, 0, 0.2);
@@ -30,6 +30,7 @@ body {
   background-position: top center; /* centraliza a imagem conforme o eixo x e y */
   background-size: cover; /* cover cobre todo espaço visível */
 
+  height: 100vh;
   /*Outra maneira de escrever (short hand) ou atalho : forma abreviada de escrever
       background: url(./assets/assets/bg-mobile.jpg) no-repeat top center/cover
   */
@@ -175,4 +176,15 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* media queries */
+
+@media (min-width: 700px) {
+  :root {
+    --background-url: url(./assets/bg-desktop.jpg);
+  }
+  .light {
+    --background-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
