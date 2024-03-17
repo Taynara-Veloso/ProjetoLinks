@@ -9,7 +9,7 @@
   --background-url: url(./assets/bg-mobile.jpg);
   --border-color: rgba(255, 255, 255, 0.5);
   --button-list-color: rgba(255, 255, 255, 0.1);
-  --button-list-color-hover: rgba(0, 0, 0, 0.2);
+  --button-list-color-hover: rgba(255, 255, 255, 0.1);
   --icon-background: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
@@ -91,11 +91,20 @@ body * {
   right: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: swipe-right 0.5s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--button-list-color-hover);
 }
 
 .light #switch button {
+  animation: swipe-left 0.5s forwards;
+  /*  
   left: 0;
   right: initial;
+  */
 }
 
 #switch span {
@@ -186,5 +195,22 @@ footer {
   }
   .light {
     --background-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+/* animation */
+@keyframes swipe-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes swipe-left {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
